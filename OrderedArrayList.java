@@ -1,72 +1,97 @@
+// Clyde "Thluffy" Sinclair
+// APCS pd00
+// Lab02
+// 2021-12-13
+
+/**********************************************
+ * class OrderedArrayList
+ * wrapper class for ArrayList
+ * maintains invariant that elements are ordered (ascending)
+ * (SKELETON)
+ **********************************************/
+
+
 import java.util.ArrayList;
 
-public class OrderedArrayList extends ArrayList{
-  //Tasks to do:
-  //Make add
-  //Make remove
-  //Make constructor that makes sure array is sorted in the begininng???????
-  
-  //instance vars:
-  ArrayList<Integer> _data;
-  
-  public OrderedArrayList() {
-    _data = new ArrayList<Integer>(); 
+public class OrderedArrayList
+{
+
+  // instance of class ArrayList, holding objects of type Integer
+  // (i.e., objects of a class that implements interface Integer)
+  private ArrayList<Integer> _data;
+
+  // default constructor
+  // initializes instance variables
+ 
+  public OrderedArrayList()
+  {
+	_data = new OrderedArrayList();
   }
-  
-  public OrderedArrayList( ArrayList<Integer> list){ 
-    _data = list;
-    //Automatically sort the array once called
-    for (int i=0; i < _data.size() - 1; i++) { // iteriate through _data 
-        for (int j = 0; j < _data.size() - 1; j++) { // iteriate through _data for each element of _data
-          if (_data.get(j) > _data.get(j+1)) { // if an element is greater than an element to the right of it
-            int temp = _data.get(j); // switch the elements' indexes 
-            _data.set(j, _data.get(j+1));
-            _data.set(j+1, temp); 
-          } 
-        }
-    }
+
+  public String toString()
+  {
+	String ans = "[";
+	for (int i; i <_data.size(); i++){
+	ans += _data.get(i) + ", ";
+	}
+	return ans + "]";
   }
-  
- /**
-  public OrderedArrayList { Check if sorted
-      for (int i=0; i < _data.size() - 1; i++) { // iteriate through _data 
-        for (int j = 0; j < _data.size() - 1; j++) { // iteriate through _data for each element of _data
-          if (_data[j] > _data[j+1]) { // if an element is greater than an element to the right of it
-            int temp = _data[j]; // switch the elements' indexes 
-            _data[j] = _data[j+1];
-            _data[j+1] = temp; }
-        }
-      }
+
+  public Integer remove( int i )
+  {
+	return _data.remove(i);
   }
-  **/
-  
-  public void add(int newVal){ 
-    //determine where newVal belongs.
-    for (int i = 0; i < _data.size() -1; i++) {
-      if (newVal < _data.get(i)) { //SEEMS okay lets try it!!!
-        _data.add(i, newVal);
-        return;
-      }
-    }
-      //newVal is bigger than all elements of the array. 
-      //Add newVal at the leftmost cell.
-      _data.add(newVal);
+
+  public int size()
+  {
+	return _data.size();
   }
-  
-  public static void main (String[] args){
-      //System.out.println("Hello World");
-      ArrayList<Integer> Faiza = new ArrayList<Integer>(6);
-      //System.out.println(Faiza.toString());
-      for (int i = 0; i < 23; i++){
-            Faiza.add((int) (Math.random() * 101)); // range btwn [0, 100]
-        }
-      //System.out.println(Faiza.toString());
-      OrderedArrayList Huda = new OrderedArrayList(Faiza);
-      System.out.println(Faiza.toString());
-      Huda.add(20);
-      System.out.println(Faiza.toString());
-      Huda.remove(2);
-      System.out.println(Huda.length());
-      System.out.println(Faiza.toString());
+
+  public Integer get( int i )
+  {
+	return _data.get(i);
   }
-}
+
+  // inserts newVal at the appropriate index
+  // maintains ascending order of elements
+  // uses a linear search to find appropriate index
+  public void addLinear(Integer newVal)
+  {
+	for (int=0; i < _data.size() - 1; i++) {
+	if (newVal < _data.get(i)) {
+	_data.add(i, newVal);
+	return; }
+  	}
+  	}
+
+  // inserts newVal at the appropriate index
+  // maintains ascending order of elements
+  // uses a binary search to find appropriate index
+  public void addBinary(Integer newVal)
+  {
+
+  }	
+
+  // main method solely for testing purposes
+  public static void main( String[] args )
+  {
+    /*-----v-------move-me-down-----------------v--------
+
+    OrderedArrayList Franz = new OrderedArrayList();
+
+    // testing linear search
+    for( int i = 0; i < 15; i++ )
+      Franz.addLinear( (int)( 50 * Math.random() ) );
+    System.out.println( Franz );
+
+    // testing binary search
+    Franz = new OrderedArrayList();
+    for( int i = 0; i < 15; i++ ) 
+      Franz.addBinary( (int)( 50 * Math.random() ) );
+    System.out.println( Franz );
+      =====^====================================^=========*/
+
+  }//end main()
+
+}//end class OrderedArrayList
+
