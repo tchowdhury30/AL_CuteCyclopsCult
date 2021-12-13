@@ -69,7 +69,18 @@ public class OrderedArrayList
   // uses a binary search to find appropriate index
   public void addBinary(Integer newVal)
   {
-
+	int left = 0;
+	int right = _data.length - 1;
+	while (left <= right) {
+		int mid = left + (right -1) / 2;
+		if (_data.get(mid) == newVal) {
+			_data.add(mid, newVal);}
+		if (_data.get(mid) < newVal) {
+			left = mid + 1;}
+		else { right = mid - 1;}
+		
+	}	
+		
   }	
 
   // main method solely for testing purposes
