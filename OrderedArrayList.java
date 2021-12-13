@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class OrderedArrayList {
+public class OrderedArrayList extends ArrayList{
   //Tasks to do:
   //Make add
   //Make remove
@@ -54,6 +54,19 @@ public class OrderedArrayList {
   }
   
   public static void main (String[] args){
-      System.out.println("Hello World");
+      //System.out.println("Hello World");
+      ArrayList<Integer> Faiza = new ArrayList<Integer>(6);
+      //System.out.println(Faiza.toString());
+      for (int i = 0; i < 23; i++){
+            Faiza.add((int) (Math.random() * 101)); // range btwn [0, 100]
+        }
+      //System.out.println(Faiza.toString());
+      OrderedArrayList Huda = new OrderedArrayList(Faiza);
+      System.out.println(Faiza.toString());
+      Huda.add(20);
+      System.out.println(Faiza.toString());
+      Huda.remove(2);
+      System.out.println(Huda.length());
+      System.out.println(Faiza.toString());
   }
 }
