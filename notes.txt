@@ -1,0 +1,10 @@
+Cute Cyclops Cult | Faiza Huda, DHBert, DTTom, Tasnim Chowdhury, Rin Fukuoka, Mary, Tape
+APCS
+2021-12-12
+
+DISCO
+- You must use get() instead of _data[index], because you are working with ArrayList not array. 
+QCC
+- What is the structure of this lab?
+- How do you test OrderedArrayList in tandem with ALtester?
+
